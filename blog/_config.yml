@@ -8,13 +8,13 @@ subtitle: ''
 description: ''
 keywords:
 author: Yu Chun Hung
-language: zh-TW
+language: zh-tw
 timezone: Asia/Taipei
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://king87515.github.io/YuchBlog
-root: /YuchBlog/
+root: /    # YuchBlog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
