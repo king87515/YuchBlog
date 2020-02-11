@@ -14,4 +14,9 @@ category:
 
 環境：mscOS mojave (當然windows也是可以)
 
-## 
+## Github repo設定 & Hexo搭建
+設置github page有兩種方式：
+1. 以 ```bash
+<user_name>.github.io``` 為專案名稱，利用 master branch 建構，這樣生成的網址將會是 ```bash
+https://<user_name>.github.io```
+2. 以自訂專案名稱 ```bash<repo_name>``` 利用 gh-pages banch 建構，，這樣生成的網址將會是 https://<user_name>.github.io/<repo_name>
