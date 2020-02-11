@@ -1743,8 +1743,8 @@ pre .javascript .function {
   height: auto;
   border: 1px solid #eee;
 /*start*/
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
+  border-radius: 40%;
+  -webkit-border-radius: 40%;
   -moz-border-radius: 50%;
   transition: 1.4s all;
 }
@@ -1834,7 +1834,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e4dd24;
+  background: #ff9d7d;
 }
 .links-of-blogroll {
   font-size: 13px;
