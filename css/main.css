@@ -188,8 +188,8 @@ body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
-  color: #555;
-  background: #eee;
+  color: #bbb;
+  background: #1d1d30;
 }
 @media (max-width: 767px) {
   body {
@@ -277,15 +277,15 @@ p {
   margin: 0 0 20px 0;
 }
 a {
-  color: #555;
+  color: #bbb;
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid #999;
   word-wrap: break-word;
 }
 a:hover {
-  color: #222;
-  border-bottom-color: #222;
+  color: #eee;
+  border-bottom-color: #eee;
 }
 blockquote {
   margin: 0;
@@ -306,7 +306,7 @@ hr {
 }
 blockquote {
   padding: 0 15px;
-  color: #666;
+  color: #eee;
   border-left: 4px solid #ddd;
 }
 blockquote cite::before {
@@ -321,7 +321,7 @@ dd {
   padding: 0;
 }
 kbd {
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
   background-color: #f9f9f9;
@@ -425,7 +425,7 @@ td {
 th,
 td {
   border-bottom: 3px solid #ddd;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #000d33;
 }
 th {
   padding-bottom: 10px;
@@ -498,8 +498,8 @@ code {
 code {
   padding: 2px 4px;
   word-wrap: break-word;
-  color: #555;
-  background: #eee;
+  color: #bbb;
+  background: #000d33;
   border-radius: 3px;
   font-size: 13px;
 }
@@ -687,14 +687,14 @@ pre .javascript .function {
 .page-post-detail .post-type-quote blockquote::before {
   top: -20px;
   background-image: url("../images/quote-l.svg");
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #eee;
 }
 .blockquote-center::after,
 .page-home .post-type-quote blockquote::after,
 .page-post-detail .post-type-quote blockquote::after {
   bottom: -20px;
   background-image: url("../images/quote-r.svg");
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
   background-position: 100% 8px;
 }
 .blockquote-center p,
@@ -745,7 +745,7 @@ pre .javascript .function {
   position: relative;
   padding: 15px;
   margin-bottom: 20px;
-  border: 1px solid #eee;
+  border: 1px solid #000d33;
   border-left-width: 5px;
   border-radius: 3px;
 }
@@ -921,7 +921,7 @@ pre .javascript .function {
 }
 .post-body .tabs ul.nav-tabs li.tab.active a {
   cursor: default;
-  color: #555;
+  color: #bbb;
 }
 .post-body .tabs .tab-content {
   background-color: #fff;
@@ -940,9 +940,9 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 20px;
   font-size: 14px;
-  color: #555;
+  color: #bbb;
   background: #fff;
-  border: 2px solid #555;
+  border: 2px solid #bbb;
   text-decoration: none;
   border-radius: 2px;
   transition-property: background-color;
@@ -952,9 +952,9 @@ pre .javascript .function {
   line-height: 2;
 }
 .btn:hover {
-  border-color: #222;
+  border-color: #eee;
   color: #fff;
-  background: #222;
+  background: #eee;
 }
 .btn +.btn {
   margin: 0 0 8px 8px;
@@ -967,7 +967,7 @@ pre .javascript .function {
   display: block;
   width: 22px;
   height: 2px;
-  background: #555;
+  background: #bbb;
   border-radius: 1px;
 }
 .btn-bar+.btn-bar {
@@ -976,7 +976,7 @@ pre .javascript .function {
 .pagination {
   margin: 120px 0 40px;
   text-align: center;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #000d33;
 }
 .page-number-basic,
 .pagination .prev,
@@ -1002,7 +1002,7 @@ pre .javascript .function {
 .pagination .next,
 .pagination .page-number {
   border-bottom: 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #000d33;
   transition-property: border-color;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
@@ -1011,7 +1011,7 @@ pre .javascript .function {
 .pagination .prev:hover,
 .pagination .next:hover,
 .pagination .page-number:hover {
-  border-top-color: #222;
+  border-top-color: #eee;
 }
 .pagination .space {
   padding: 0;
@@ -1025,8 +1025,8 @@ pre .javascript .function {
 }
 .pagination .page-number.current {
   color: #fff;
-  background: #ccc;
-  border-top-color: #ccc;
+  background: #eee;
+  border-top-color: #eee;
 }
 @media (max-width: 767px) {
   .pagination {
@@ -1037,13 +1037,13 @@ pre .javascript .function {
   .pagination .page-number {
     margin-bottom: 10px;
     border-top: 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #000d33;
     padding: 0 10px;
   }
   .pagination .prev:hover,
   .pagination .next:hover,
   .pagination .page-number:hover {
-    border-bottom-color: #222;
+    border-bottom-color: #eee;
   }
 }
 .comments {
@@ -1064,7 +1064,7 @@ pre .javascript .function {
   z-index: 1050;
   padding: 0 6px;
   width: 24px;
-  background: #222;
+  background: #eee;
   font-size: 12px;
   opacity: 0.6;
   color: #fff;
@@ -1097,7 +1097,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #222;
+  background: #eee;
 }
 .site-meta {
   margin: 0;
@@ -1113,7 +1113,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #222;
+  background: #eee;
   border-bottom: none;
 }
 .brand:hover {
@@ -1211,7 +1211,7 @@ pre .javascript .function {
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
-  border-bottom-color: #222;
+  border-bottom-color: #eee;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -1305,7 +1305,7 @@ pre .javascript .function {
 .posts-expand .post-body h6 .header-anchor {
   float: right;
   margin-left: 10px;
-  color: #ccc;
+  color: #eee;
   border-bottom-style: none;
   visibility: hidden;
 }
@@ -1400,7 +1400,7 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: border;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed #eee;
 }
 .posts-collapse .post-header::before {
   content: " ";
@@ -1419,10 +1419,10 @@ pre .javascript .function {
   transition-property: background;
 }
 .posts-collapse .post-header:hover {
-  border-bottom-color: #666;
+  border-bottom-color: #eee;
 }
 .posts-collapse .post-header:hover::before {
-  background: #222;
+  background: #eee;
 }
 .posts-collapse .post-meta {
   position: absolute;
@@ -1444,7 +1444,7 @@ pre .javascript .function {
   opacity: 0.6;
 }
 .posts-collapse .post-title a {
-  color: #666;
+  color: #eee;
   border-bottom: none;
 }
 .page-home .post-type-quote .post-header,
@@ -1461,7 +1461,7 @@ pre .javascript .function {
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
-  color: #555;
+  color: #bbb;
   border-bottom: none;
   line-height: 1.2;
   vertical-align: top;
@@ -1561,7 +1561,7 @@ pre .javascript .function {
   display: table;
   margin-top: 15px;
   width: 100%;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #000d33;
 }
 .post-nav-divider {
   display: table-cell;
@@ -1578,11 +1578,11 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #555;
+  color: #bbb;
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #222;
+  color: #eee;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1612,7 +1612,7 @@ pre .javascript .function {
   margin: 80px auto 60px;
   width: 8%;
   height: 1px;
-  background: #ccc;
+  background: #eee;
   text-align: center;
 }
 .post:last-child .post-eof.post-eof.post-eof {
@@ -1667,15 +1667,15 @@ pre .javascript .function {
   width: 0;
   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
-  background: #222;
+  background: #eee;
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
   color: #999;
-  border-bottom-color: #555;
+  border-bottom-color: #bbb;
 }
 .sidebar a:hover {
-  color: #eee;
+  color: #000d33;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .sidebar {
@@ -1707,7 +1707,7 @@ pre .javascript .function {
   width: 14px;
   height: 14px;
   padding: 5px;
-  background: #222;
+  background: #eee;
   line-height: 0;
   z-index: 1050;
   cursor: pointer;
@@ -1741,11 +1741,9 @@ pre .javascript .function {
   padding: 2px;
   max-width: 120px;
   height: auto;
-  border: 1px solid #eee;
+  border: 1px solid #000d33;
 /*start*/
-  border-radius: 40%;
-  -webkit-border-radius: 40%;
-  -moz-border-radius: 40%;
+  border-radius: 50%;
   transition: 1.4s all;
 }
 .site-author-image:hover {
@@ -1757,7 +1755,7 @@ pre .javascript .function {
 .site-author-name {
   margin: 0;
   text-align: center;
-  color: #222;
+  color: #eee;
   font-weight: 600;
 }
 .site-description {
@@ -1775,7 +1773,7 @@ pre .javascript .function {
 .site-state-item {
   display: inline-block;
   padding: 0 15px;
-  border-left: 1px solid #eee;
+  border-left: 1px solid #000d33;
 }
 .site-state-item:first-child {
   border-left: none;
@@ -1823,7 +1821,7 @@ pre .javascript .function {
   vertical-align: middle;
   margin-right: 10px;
   margin-bottom: 10px;
-  border-bottom-color: #555;
+  border-bottom-color: #bbb;
   font-size: 13px;
 }
 .links-of-author a:before {
@@ -1834,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a82bff;
+  background: #ba7c75;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1869,7 +1867,7 @@ pre .javascript .function {
   cursor: pointer;
   border-bottom: 1px solid transparent;
   font-size: 14px;
-  color: #555;
+  color: #bbb;
 }
 .sidebar-nav li:hover {
   color: #fc6423;
@@ -1895,7 +1893,7 @@ pre .javascript .function {
 }
 .post-toc-empty {
   font-size: 14px;
-  color: #666;
+  color: #eee;
 }
 .post-toc-wrap {
   overflow: hidden;
@@ -1918,8 +1916,8 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: all;
-  color: #666;
-  border-bottom-color: #ccc;
+  color: #eee;
+  border-bottom-color: #eee;
 }
 .post-toc ol a:hover {
   color: #000;
@@ -2392,7 +2390,7 @@ pre .javascript .function {
   width: 10px;
   height: 10px;
   opacity: 0.5;
-  background: #555;
+  background: #bbb;
   border: 1px solid #fff;
   border-radius: 50%;
 }
@@ -2618,7 +2616,7 @@ pre .javascript .function {
   overflow: hidden;
   padding: 0;
   width: 240px;
-  background: #fff;
+  background: rgba(0,153,153,0.1);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   border-radius: initial;
 }
@@ -2702,7 +2700,7 @@ pre .javascript .function {
   float: left;
   margin-top: 300px;
   width: 240px;
-  background: #eee;
+  background: #1d1d30;
   box-shadow: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2755,7 +2753,7 @@ pre .javascript .function {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #222;
+  background: #eee;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -2858,8 +2856,8 @@ pre .javascript .function {
 .sidebar-inner {
   box-sizing: border-box;
   width: 240px;
-  color: #555;
-  background: #fff;
+  color: #bbb;
+  background: rgba(0,153,153,0.1);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   border-radius: initial;
   opacity: 0;
@@ -2883,10 +2881,10 @@ pre .javascript .function {
   clear: both;
 }
 .sidebar a {
-  color: #555;
+  color: #bbb;
 }
 .sidebar a:hover {
-  color: #222;
+  color: #eee;
 }
 .site-state-item {
   padding: 0 10px;
@@ -2899,8 +2897,8 @@ pre .javascript .function {
   text-decoration: underline;
 }
 .feed-link {
-  border-top: 1px dotted #ccc;
-  border-bottom: 1px dotted #ccc;
+  border-top: 1px dotted #eee;
+  border-bottom: 1px dotted #eee;
   text-align: center;
 }
 .feed-link a {
@@ -2941,7 +2939,7 @@ pre .javascript .function {
 }
 .links-of-author-item a:hover {
   border-radius: 4px;
-  background: #eee;
+  background: #000d33;
 }
 .links-of-author-item .fa {
   margin-right: 2px;
@@ -2954,7 +2952,7 @@ pre .javascript .function {
   text-align: center;
   margin-top: 20px;
   padding: 3px 0 0;
-  border-top: 1px dotted #ccc;
+  border-top: 1px dotted #eee;
 }
 .links-of-blogroll-title {
   margin-top: 0;
@@ -2995,7 +2993,7 @@ pre .javascript .function {
 }
 .post-block {
   padding: 40px;
-  background: #fff;
+  background: rgba(0,153,153,0.1);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   border-radius: initial;
 }
@@ -3057,15 +3055,15 @@ pre .javascript .function {
 }
 .post-body h1 {
   font-size: 1.6em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #1d1d30;
 }
 .post-body h2 {
   font-size: 1.45em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #1d1d30;
 }
 .post-body h3 {
   font-size: 1.3em;
-  border-bottom: 1px dotted #eee;
+  border-bottom: 1px dotted #1d1d30;
 }
 .post-body h4 {
   font-size: 1.2em;
@@ -3131,4 +3129,7 @@ pre .javascript .function {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.site-meta {
+  background: #603;
 }
