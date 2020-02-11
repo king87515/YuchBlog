@@ -1745,7 +1745,7 @@ pre .javascript .function {
 /*start*/
   border-radius: 40%;
   -webkit-border-radius: 40%;
-  -moz-border-radius: 50%;
+  -moz-border-radius: 40%;
   transition: 1.4s all;
 }
 .site-author-image:hover {
@@ -1834,7 +1834,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9d7d;
+  background: #a82bff;
 }
 .links-of-blogroll {
   font-size: 13px;
