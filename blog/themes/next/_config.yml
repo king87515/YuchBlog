@@ -94,7 +94,7 @@ index_with_subtitle: false
 menu:
   home: /|| home # 原生檔案/後面會有空格造成hexo生成會多%20導致不能正確讀取頁面
   #about: /about/ || user
-  #tags: /tags/|| tags
+  tags: /tags/|| tags
   categories: /categories/|| th
   archives: /archives/|| archive # 原生檔案/後面會有空格造成hexo生成會多%20導致不能正確讀取頁面
   #schedule: /schedule/ || calendar

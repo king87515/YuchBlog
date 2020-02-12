@@ -98,11 +98,14 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 ```
 接下來要到設定檔中將主題改為 next ( 預設是 landscape )
 
-主要的設定檔案有兩個 : 一個是``` \_config.yml```，第二個是
-```\themes\next\_config.yml```
+主要的設定檔案有兩個 : 
+1. ``` \_config.yml```
+2. ```\themes\next\_config.yml```
 
 #### \_config.yml 
+
 網站的基本資訊設置，比較要注意的地方是 language 的部分，之後要配合 Next 的語言統一做設定。
+
 ```bash
 # Site
 title: #網站/部落格名稱
@@ -113,7 +116,9 @@ author: #作者
 language: #語言 zh-TW
 timezone: #時區 Asia/Taipei
 ```
+
 設定文章網址型態，這裡主要是讓某些地方會需要顯示文章網址 (例如版權宣告區塊)的部分可以正確顯示。
+
 ```bash
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -150,7 +155,8 @@ Next 一共有四種版型可以選擇，大家可以自行選擇版型，將不
 scheme: Gemini
 ```
 ### Step5:動態背景
-可以在canvas-nest.min.js做修改
+可以在```\⁨themes⁩\⁨next⁩\⁨source⁩\lib⁩\canvas-nest⁩.js```做修改
+
 ```bash
 color: "255, 80, 219" # RGB values, use `,` to separate #線條顏色
 opacity: 1 # The opacity of line: 0~1 #線條透明度
