@@ -6,8 +6,7 @@ tags:
 categories:
 - Tool
 ---
-# Git+Hexo-架設個人靜態網站
-## 前言
+### 前言
 因為心血來潮，想說是時候該架設自己的網站了，可以記錄自己一些學習心得，在建立環境的時候也是反反覆覆重建了好多次嗚嗚，當然最後還是順利的建完了。
 
 接下來就開始介紹 hexo 的基本安裝，並且架設在自己的github上。
@@ -16,11 +15,11 @@ categories:
 
 <!--more-->
 
-## Github repo設定 & Hexo搭建
+### Github repo設定 & Hexo搭建
 設置github page方式：
 1. 以```<user_name>.github.io``` 為專案名稱，利用 branch 建構，這樣生成的網址將會是```https://<user_name>.github.io/<repo_name> ```這樣出來的網頁網址就為: ```https://<user_name>.github.io/<repo_name>/ ```
 
-### Step1:
+### Step1:建立repository
 在個人的 github 頁面上新增一個 repository (此處我就使用 blog 作為專案名稱)，不需建立 README.md
 
 {% if 1 == 1 %}
@@ -99,10 +98,10 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 ```
 接下來要到設定檔中將主題改為 next ( 預設是 landscape )
 
-主要的設定檔案有兩個，一個是``` \_config.yml```，第二個是
+主要的設定檔案有兩個 : 一個是``` \_config.yml```，第二個是
 ```\themes\next\_config.yml```
 
-* <h2> \_config.yml </h2>
+#### \_config.yml 
 網站的基本資訊設置，比較要注意的地方是 language 的部分，之後要配合 Next 的語言統一做設定。
 ```bash
 # Site
@@ -141,7 +140,7 @@ deploy:
 ```
 如果不是利用 master 來進行網站設置，那麼 branch 的部分就要改成你的 <branch_name>。
 
-* <h2>\themes\next\_config.yml</h2>
+#### \themes\next\_config.yml
 Next 一共有四種版型可以選擇，大家可以自行選擇版型，將不要用的版型用 # 註釋掉即可。( 我自己使用的是 Gemini 版型 )
 ```bash
 # Schemes
