@@ -4,7 +4,7 @@
 
 # Site
 title: YuCH's Blog
-subtitle: ''
+subtitle: 'computer science'
 description: ''
 keywords:
 author: Yu Chun Hung
@@ -41,7 +41,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true # 文章資源文件夾
 relative_link: false
 future: true
 highlight:
