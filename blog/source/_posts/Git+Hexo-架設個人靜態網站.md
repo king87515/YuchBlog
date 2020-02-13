@@ -23,16 +23,18 @@ tags: `web` `hexo`
 
 ### Github repo設定 & Hexo搭建
 設置github page方式：
-1. 以```<user_name>.github.io``` 為專案名稱，利用 branch 建構，這樣生成的網址將會是```https://<user_name>.github.io/<repo_name> ```這樣出來的網頁網址就為: ```https://<user_name>.github.io/<repo_name>/ ```
+1. 以`<user_name>.github.io` 為專案名稱，利用 branch 建構，這樣生成的網址將會是`https://<user_name>.github.io/<repo_name>` 這樣出來的網頁網址就為: `https://<user_name>.github.io/<repo_name>/`
 
 ### Step 1: 建立repository
 在個人的 github 頁面上新增一個 repository (此處我就使用 blog 作為專案名稱)，不需建立 README.md
+
 
 {% if 1 == 1 %}
     {% asset_img step1_git.png step1_git %}
 {% else %}
     ![step1_git](https://i.imgur.com/tj82ztP.png)
 {% endif %}
+
 
 ### Step 2: 安裝套件(node.js/npm/nvm)
 還有很多重要的事情，中間可能會遇到一些問題，接下來的部分我就簡單介紹一下，上網找一下應該都會有很多解決方式。
@@ -58,7 +60,8 @@ $ git clone https://github.com/<user_name>/<repo_name>.git
 ```
 這樣我們就可以從這邊修改部落格內容，並且推上 github 專案中。
 
-像我這裡就遇到``` command not found: hexo bash```的情形，這裡有個方法提供參考:
+像我這裡就遇到 `command not found: hexo bash` 的情形，這裡有個方法提供參考:
+
 ```bash
 # 下載nvm套件
 $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
@@ -67,11 +70,14 @@ $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bas
 $ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
 ```
-載完nvm，還有一個路徑問題(for mac)，首先```open ~/.zshrc```，然後在.zshrc檔案新增hexo路徑:
+
+載完nvm，還有一個路徑問題(for mac)，首先 `open ~/.zshrc` ，然後在.zshrc檔案新增hexo路徑:
+
 ```bash
 #path to HEXO
 export PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:$PATH
 ```
+
 完成後再重新安裝Hexo即可。
 
 這裡有幾個常用指令要記住，之後再進行部落格修改的時候會很常使用到 :
@@ -95,7 +101,7 @@ $ hexo server -p 5000
 
 備註：
 在 github 下的 branch 我設定成 master/hexofile
-在 hexofile 進行操作，利用 git 指令載入到 ```hexofile```上；如果是利用hexo指令則會自動部署到 ```master``` 裡（因為_config.yml裡的branch設定成master)
+在 hexofile 進行操作，利用 git 指令載入到 `hexofile` 上；如果是利用hexo指令則會自動部署到 `master` 裡（因為_config.yml裡的branch設定成master)
 
 hexo指令進行部署厚的檔案是經過轉換的，並非原始檔，所以使用 branch 維護是比姣好的。
 
@@ -118,8 +124,8 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 接下來要到設定檔中將主題改為 next ( 預設是 landscape )
 
 主要的設定檔案有兩個 : 
-1. ``` \_config.yml```
-2. ```\themes\next\_config.yml```
+1. `\_config.yml`
+2. `\themes\next\_config.yml`
 
 #### \_config.yml 
 
@@ -146,6 +152,7 @@ root: /<repo_name>/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 ```
+
 將主題改為 next
 ```bash
 # Extensions
@@ -153,7 +160,9 @@ permalink_defaults:
 ## Themes: https://hexo.io/themes/
 theme: next
 ```
+
 最後這裡最重要，之後我們要利用 hexo 指令進行部屬，就會調用這部份來進行部屬，如果這部分沒有正確便無法部屬上去。
+
 ```bash
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -162,6 +171,7 @@ deploy:
   repo: https://github.com/<user_name>/<repo_name>.git
   branch: master
 ```
+
 如果不是利用 master 來進行網站設置，那麼 branch 的部分就要改成你的 <branch_name>。
 
 #### \themes\next\_config.yml
@@ -174,7 +184,7 @@ Next 一共有四種版型可以選擇，大家可以自行選擇版型，將不
 scheme: Gemini
 ```
 ### Step 5: 動態背景
-可以在```\⁨themes⁩\⁨next⁩\⁨source⁩\lib⁩\canvas-nest⁩.js```做修改
+可以在 `\⁨themes⁩\⁨next⁩\⁨source⁩\lib⁩\canvas-nest⁩.js` 做修改
 
 
 ```bash
@@ -184,44 +194,49 @@ zIndex: -1 # z-index property of the background #位在哪一層
 count: 100 # The number of lines #線條數量
 ```
 ### Step 6: 調整及部署
+
 在每一個設定更動後，也有一個標準 SOP :
+
 ```bash
 $ hexo clean
 $ hexo g # generator
 $ hexo s # server
 ```
+
 先在本機上看看是否有什麼問題，持續地進行微調，待最後設定都沒有問題後再進行部屬
+
 ```bash
 $ hexo d # deploy
 ```
+
 ### Step 7: 文章發佈
 Hexo 支援 markdown 編輯。
 基本上有在使用hackmd的人都並不陌生，有興趣可以去學習 [markdown語法](https://github.com/othree/markdown-syntax-zhtw)
 
-```<!--more-->```是用來縮短首頁每篇文章的長度，會顯示```閱讀全文```
+`<!--more-->`是用來縮短首頁每篇文章的長度，會顯示`閱讀全文`
 
 接下來，我們要在網站中建立第一篇新文章，您可以直接從現有的範例文章「Hello World」改寫，也可以學習 new 指令。
 
 ```bash
 $ hexo new [layout] <title>
 ```
-您可以在指令中指定文章的佈局（layout），預設為 ```post```，您可以透過修改 ```_config.yml``` 中的 ```default_layout``` 設定來指定預設佈局。
+您可以在指令中指定文章的佈局（layout），預設為 `post` ，您可以透過修改 `_config.yml` 中的 `default_layout` 設定來指定預設佈局。
 
 #### 佈局（Layout）
 Hexo 有三種預設佈局：post、page 和 draft，它們分別對應不同的路徑，而您所自定的其他佈局和 post 相同，都儲存至 source/_posts 資料夾。
 
 | 佈局| 路徑| 
-| -------- | -------- | 
-| post    | source/_posts     | 
-| page    | source            | 
-| draft   | source/_posts     | 
+| --- | --- |
+| post | source/_posts | 
+| page | source | 
+| draft | source/_posts | 
 
 
 
 #### 首頁摘要的部分
-一般在首頁會希望每一篇文章只要呈現一小部分內容以及一張代表性圖片即可，藉由 “ 閱讀全文 “ 按鈕來閱讀每一篇文章完整內容，在 hexo 官方的建議作法是在文章中插入```<!-- more -->```便可以在首頁僅呈現此代碼之前的文章內容。
+一般在首頁會希望每一篇文章只要呈現一小部分內容以及一張代表性圖片即可，藉由 “ 閱讀全文 “ 按鈕來閱讀每一篇文章完整內容，在 hexo 官方的建議作法是在文章中插入 `<!-- more -->` 便可以在首頁僅呈現此代碼之前的文章內容。
 
-至於閱讀全文的按鈕樣式，我們可以在 ```\themes\next\source\css\_schemes\<選擇的版型>\index.styl``` 最後加入以下內容來做調整
+至於閱讀全文的按鈕樣式，我們可以在 `\themes\next\source\css\_schemes\<選擇的版型>\index.styl` 最後加入以下內容來做調整
 
 ```bash
 //閱讀全文樣式設置
@@ -261,11 +276,11 @@ Hexo 有三種預設佈局：post、page 和 draft，它們分別對應不同的
 * https://blog.csdn.net/lichenliang666/article/details/88218551
 * https://ithelp.ithome.com.tw/articles/10208619
 * https://sh2ocn.top/2019/05/31/Hexo-NexT%E4%B8%BB%E9%A2%98-%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E6%97%8B%E8%BD%AC%E5%A4%B4%E5%83%8F/
-* [...etc](https://www.google.com/search?q=hexo&rlz=1C5CHFA_enTW848TW848&oq=hexo&aqs=chrome..69i57j69i59l3j69i60l4.2945j0j7&sourceid=chrome&ie=UTF-8)
 * https://extremegtr.github.io/2017/09/27/Customize-NexT-Gemini-theme/
 * https://jacksonleon.gitee.io/posts/1540132352.html
 *  https://blog.csdn.net/Wonz5130/article/details/84666519
 *  https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/
+* [...etc](https://www.google.com/search?q=hexo&rlz=1C5CHFA_enTW848TW848&oq=hexo&aqs=chrome..69i57j69i59l3j69i60l4.2945j0j7&sourceid=chrome&ie=UTF-8)
 
 
 
