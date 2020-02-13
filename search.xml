@@ -9,10 +9,7 @@
 <p>環境：mscOS mojave (當然windows也是可以)</p>
 <a id="more"></a>
 
-<h3 id="Github-repo設定-amp-Hexo搭建"><a href="#Github-repo設定-amp-Hexo搭建" class="headerlink" title="Github repo設定 &amp; Hexo搭建"></a>Github repo設定 &amp; Hexo搭建</h3><p>設置github page方式：</p>
-<ol>
-<li>以<code>&lt;user_name&gt;.github.io</code> 為專案名稱，利用 branch 建構，這樣生成的網址將會是<code>https://&lt;user_name&gt;.github.io/&lt;repo_name&gt;</code> 這樣出來的網頁網址就為: <code>https://&lt;user_name&gt;.github.io/&lt;repo_name&gt;/</code></li>
-</ol>
+<h3 id="Github-repo設定-amp-Hexo搭建"><a href="#Github-repo設定-amp-Hexo搭建" class="headerlink" title="Github repo設定 &amp; Hexo搭建"></a>Github repo設定 &amp; Hexo搭建</h3><p>設置github page方式：<br>以<code>&lt;user_name&gt;.github.io</code> 為專案名稱，利用 branch 建構，這樣生成的網址將會是<code>https://&lt;user_name&gt;.github.io/&lt;repo_name&gt;</code> 這樣出來的網頁網址就為: <code>https://&lt;user_name&gt;.github.io/&lt;repo_name&gt;/</code></p>
 <h3 id="Step-1-建立repository"><a href="#Step-1-建立repository" class="headerlink" title="Step 1: 建立repository"></a>Step 1: 建立repository</h3><p>在個人的 github 頁面上新增一個 repository (此處我就使用 blog 作為專案名稱)，不需建立 README.md</p>
 
     <img src="/YuchBlog/2020/02/10/Git+Hexo-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99/step1_git.png" class="" title="step1_git">
