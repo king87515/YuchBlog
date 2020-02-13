@@ -23,7 +23,7 @@ tags: `web` `hexo`
 
 ### Github repo設定 & Hexo搭建
 設置github page方式：
-1. 以`<user_name>.github.io` 為專案名稱，利用 branch 建構，這樣生成的網址將會是`https://<user_name>.github.io/<repo_name>` 這樣出來的網頁網址就為: `https://<user_name>.github.io/<repo_name>/`
+以`<user_name>.github.io` 為專案名稱，利用 branch 建構，這樣生成的網址將會是`https://<user_name>.github.io/<repo_name>` 這樣出來的網頁網址就為: `https://<user_name>.github.io/<repo_name>/`
 
 ### Step 1: 建立repository
 在個人的 github 頁面上新增一個 repository (此處我就使用 blog 作為專案名稱)，不需建立 README.md
