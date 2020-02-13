@@ -171,7 +171,7 @@ toc:
 
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
-Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+#Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 creative_commons: by-nc-sa  # 版權頁設定，這裡可以設定文末 (或 sidebar) 版權宣告的型態，這裡我選用的是 by-nc-sa ( 姓名標示-非商業性-相同方式分享 )。
 
 
@@ -194,7 +194,7 @@ sidebar:
   offset: 12
 
   # Back to top in sidebar (only for Pisces | Gemini).
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button.
   scrollpercent: false
@@ -502,8 +502,8 @@ facebook_sdk:
   enable:       true
   app_id:       #<app_id>
   fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
+  like_button:  true
+  webmaster:    true
 
 # Facebook comments plugin
 # This plugin depends on Facebook SDK.
