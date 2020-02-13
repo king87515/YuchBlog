@@ -135,8 +135,9 @@ social:
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   YouTube: https://www.youtube.com/channel/UCn4sycUt7Edv_0tyOrYaXBg?view_as=subscriber || youtube
-  #Instagram: https://www.instagram.com/king87515/ || instagram
+  Instagram: https://www.instagram.com/king87515/ || instagram
   #Skype: skype:yourname?call|chat || skype
+  HackMD: https://hackmd.io/@king87515 || book
 
 social_icons:
   enable: true
