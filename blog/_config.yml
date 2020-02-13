@@ -8,7 +8,7 @@ subtitle: 'computer science'
 description: ''
 keywords:
 author: Yu Chun Hung
-language: zh-tw
+language: # zh-tw
 timezone: Asia/Taipei
 
 # URL
