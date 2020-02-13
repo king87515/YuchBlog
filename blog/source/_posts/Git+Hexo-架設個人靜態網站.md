@@ -138,7 +138,7 @@ subtitle: #網站/部落格副標題
 description: #網站/部落格基本描述 
 keywords:
 author: #作者
-language: #語言 zh-TW
+language: #語言 zh-tw
 timezone: #時區 Asia/Taipei
 ```
 

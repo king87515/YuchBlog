@@ -172,7 +172,7 @@ toc:
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 #Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-creative_commons: by-nc-sa  # 版權頁設定，這裡可以設定文末 (或 sidebar) 版權宣告的型態，這裡我選用的是 by-nc-sa ( 姓名標示-非商業性-相同方式分享 )。
+#creative_commons:  # 版權頁設定，這裡可以設定文末 (或 sidebar) 版權宣告的型態，這裡我選用的是 by-nc-sa ( 姓名標示-非商業性-相同方式分享 )。
 
 
 sidebar:
@@ -194,7 +194,7 @@ sidebar:
   offset: 12
 
   # Back to top in sidebar (only for Pisces | Gemini).
-  b2t: true
+  b2t: false
 
   # Scroll percent label in b2t button.
   scrollpercent: false
@@ -607,12 +607,19 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
   # show top n results per article, show all results by setting to -1
   top_n_per_article: 1
+
+#local search新增以下內容
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 
 # ---------------------------------------------------------------
