@@ -285,5 +285,14 @@ Hexo 有三種預設佈局：post、page 和 draft，它們分別對應不同的
 * [文章連結唯一化](http://muyunyun.cn/posts/f55182c5/#more)
 * [...etc](https://www.google.com/search?q=hexo&rlz=1C5CHFA_enTW848TW848&oq=hexo&aqs=chrome..69i57j69i59l3j69i60l4.2945j0j7&sourceid=chrome&ie=UTF-8)
 
+### 後記： Debug
+記錄一些後續再換電腦後重新部署遇到的問題
 
+#### Hexo
+* [sudo權限問題](https://blog.csdn.net/Andrewb/article/details/103324279)
+* [Hexo Deploy 失敗](https://blog.myctw.cc/post/25cd.html)
+  * nodejs版本問題，需要透過nvm降版本 
 
+  
+#### Git
+* [../.DS_Store](https://blog.csdn.net/qq_32907195/article/details/114941510)
