@@ -185,6 +185,17 @@ certbot certonly --standalone --renew-by-default -d igl.cse.ntou.edu.tw
 <li><a href="http://muyunyun.cn/posts/f55182c5/#more" target="_blank" rel="noopener">文章連結唯一化</a></li>
 <li><a href="https://www.google.com/search?q=hexo&rlz=1C5CHFA_enTW848TW848&oq=hexo&aqs=chrome..69i57j69i59l3j69i60l4.2945j0j7&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener">…etc</a></li>
 </ul>
+<h3 id="後記：-Debug"><a href="#後記：-Debug" class="headerlink" title="後記： Debug"></a>後記： Debug</h3><p>記錄一些後續再換電腦後重新部署遇到的問題</p>
+<h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h4><ul>
+<li><a href="https://blog.csdn.net/Andrewb/article/details/103324279" target="_blank" rel="noopener">sudo權限問題</a></li>
+<li><a href="https://blog.myctw.cc/post/25cd.html" target="_blank" rel="noopener">Hexo Deploy 失敗</a><ul>
+<li>nodejs版本問題，需要透過nvm降版本 </li>
+</ul>
+</li>
+</ul>
+<h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><ul>
+<li><a href="https://blog.csdn.net/qq_32907195/article/details/114941510" target="_blank" rel="noopener">../.DS_Store</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>website網頁設計</category>
