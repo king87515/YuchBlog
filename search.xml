@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>HTTPS Certbot 申請憑證</title>
+    <url>/YuchBlog/posts/3c84af96/</url>
+    <content><![CDATA[<p>categories: <code>website網頁設計</code><br>tags: <code>web</code> <code>https</code></p>
+<h1 id="Certbot"><a href="#Certbot" class="headerlink" title="Certbot"></a>Certbot</h1><ul>
+<li>cerbot vedio<ul>
+<li><a href="https://www.youtube.com/watch?v=snXIDRrZMpM" target="_blank" rel="noopener">https://www.youtube.com/watch?v=snXIDRrZMpM</a></li>
+</ul>
+</li>
+<li>certbot blog<ul>
+<li><a href="https://blog.miniasp.com/post/2021/02/11/Create-SSL-TLS-certificates-from-LetsEncrypt-using-Certbot" target="_blank" rel="noopener">https://blog.miniasp.com/post/2021/02/11/Create-SSL-TLS-certificates-from-LetsEncrypt-using-Certbot</a></li>
+</ul>
+</li>
+<li>certbot command<ul>
+<li><a href="https://hackmd.io/@c36ICNyhQE6-iTXKxoIocg/H1xmt263v" target="_blank" rel="noopener">https://hackmd.io/@c36ICNyhQE6-iTXKxoIocg/H1xmt263v</a></li>
+</ul>
+</li>
+<li>nodejs certbot pem setting<ul>
+<li><a href="https://qops.blogspot.com/2019/02/certbot-letsencrypt-nodeexpress-https.html" target="_blank" rel="noopener">https://qops.blogspot.com/2019/02/certbot-letsencrypt-nodeexpress-https.html</a></li>
+</ul>
+</li>
+<li>xampp certbot pem setting<ul>
+<li><a href="https://pixlilen.pixnet.net/blog/post/1494496-%E5%AE%89%E8%A3%9Dlet%27s-encrypt%E5%85%8D%E8%B2%BB%E6%86%91%E8%AD%89%E5%9C%A8xampp%E4%B8%8A_2019?utm_source=PIXNET&amp;utm_medium=Hashtag_article" target="_blank" rel="noopener">https://pixlilen.pixnet.net/blog/post/1494496-%E5%AE%89%E8%A3%9Dlet%27s-encrypt%E5%85%8D%E8%B2%BB%E6%86%91%E8%AD%89%E5%9C%A8xampp%E4%B8%8A_2019?utm_source=PIXNET&amp;utm_medium=Hashtag_article</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>申請流程<a id="more"></a>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># create acount</span></span><br><span class="line">certbot certonly -<span class="literal">-manual</span> <span class="literal">-m</span> [<span class="type">mail</span>] <span class="literal">-d</span> [<span class="type">domain</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment"># 申請 Let's Encrypt 免費憑證，通過驗證項目才能「證明」你真的擁有該域名！</span></span><br><span class="line">certbot certonly -<span class="literal">-manual</span> -<span class="literal">-preferred</span><span class="literal">-challenges</span> http <span class="literal">-m</span> ntouigl@gmail.com <span class="literal">-d</span> igl.cse.ntou.edu.tw</span><br><span class="line"><span class="comment"># 刪除憑證</span></span><br><span class="line">certbot delete -<span class="literal">-cert</span><span class="literal">-name</span> igl.cse.ntou.edu.tw</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight ps"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 顯示目前 certbot 管理的憑證</span></span><br><span class="line">certbot certificates</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Xampp hHttpd-ssl.conf</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SSLCertificateFile &quot;C:&#x2F;Certbot&#x2F;live&#x2F;[domain name]&#x2F;cert.pem&quot;</span><br><span class="line">SSLCertificateKeyFile &quot;C:&#x2F;Certbot&#x2F;live&#x2F;[domain name]&#x2F;privkey.pem&quot;</span><br><span class="line">SSLCertificateChainFile &quot;C:&#x2F;Certbot&#x2F;live&#x2F;[domain name]&#x2F;chain.pem&quot;</span><br><span class="line">SSLCACertificateFile &quot;C:&#x2F;Certbot&#x2F;live&#x2F;[domain name]&#x2F;fullchain.pem&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Xampp httpd.conf</p>
+<ul>
+<li>建議將<code>#NameVirtualHost *:443</code>寫在this block之下方，新版的xampp應該可以直接放在檔案最下方<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DocumentRoot &quot;$&#123;LSSROOT&#125;&#x2F;public&quot;</span><br><span class="line">&lt;Directory &quot;$&#123;LSSROOT&#125;&#x2F;public&quot;&gt;</span><br><span class="line">    #省略</span><br><span class="line">&lt;&#x2F;Directory&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#NameVirtualHost *:443</span><br><span class="line">&lt;VirtualHost *:443&gt;</span><br><span class="line">ServerName [domainName]</span><br><span class="line">DocumentRoot &quot;[rootPath]&quot;</span><br><span class="line">SSLEngine on</span><br><span class="line">SSLCertificateFile &quot;C:&#x2F;Certbot&#x2F;live&#x2F;[domain name]&#x2F;cert.pem&quot;</span><br><span class="line">SSLCertificateKeyFile &quot;C:&#x2F;Certbot&#x2F;live&#x2F;[domain name]&#x2F;privkey.pem&quot;</span><br><span class="line">SSLCertificateChainFile &quot;C:&#x2F;Certbot&#x2F;live&#x2F;[domain name]&#x2F;chain.pem&quot;</span><br><span class="line">SSLCACertificateFile &quot;C:&#x2F;Certbot&#x2F;live&#x2F;[domain name]&#x2F;fullchain.pem&quot;</span><br><span class="line">&lt;&#x2F;VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ps: <code>DocumentRoot</code><ul>
+<li>Lab web : <code>&quot;${LSSROOT}/public&quot;</code></li>
+<li>cgw : <code>&quot;C:/xampp/htdocs/dashboard/CGW2021&quot;</code></li>
+<li>heping : <code>&quot;C:/xampp/htdocs&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="申請頻率限制說明"><a href="#申請頻率限制說明" class="headerlink" title="申請頻率限制說明"></a>申請頻率限制說明</h2><ul>
+<li><a href="https://letsencrypt.org/zh-tw/docs/rate-limits/" target="_blank" rel="noopener">https://letsencrypt.org/zh-tw/docs/rate-limits/</a></li>
+<li>取得你的註冊網域所申請過的憑證列表 <a href="https://crt.sh/" target="_blank" rel="noopener">https://crt.sh/</a></li>
+</ul>
+<h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">#執行前先關閉專案</span></span><br><span class="line">certbot certonly -<span class="literal">-standalone</span> -<span class="literal">-renew</span><span class="literal">-by</span><span class="literal">-default</span> <span class="literal">-d</span> [<span class="type">domain_name</span>]</span><br></pre></td></tr></table></figure>
+<!-- 
+certbot certonly --standalone --renew-by-default -d cgw2021.cse.ntou.edu.tw
+certbot certonly --standalone --renew-by-default -d igl.cse.ntou.edu.tw 
+-->]]></content>
+      <categories>
+        <category>website網頁設計</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+        <tag>https</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git+Hexo-架設個人靜態網站</title>
+    <url>/YuchBlog/posts/86f390b1/</url>
+    <content><![CDATA[<p>categories: <code>website網頁設計</code><br>tags: <code>web</code> <code>hexo</code></p>
+<h3 id="Git-Hexo-架設個人靜態網站-前言"><a href="#Git-Hexo-架設個人靜態網站-前言" class="headerlink" title="Git+Hexo-架設個人靜態網站-前言"></a>Git+Hexo-架設個人靜態網站-前言</h3><p>因為心血來潮，想說是時候該架設自己的網站了，可以記錄自己一些學習心得，在建立環境的時候也是反反覆覆重建了好多次嗚嗚，當然最後還是順利的建完了。</p>
+<p>接下來就開始介紹 hexo 的基本安裝，並且架設在自己的github上。</p>
+<p>環境：mscOS mojave (當然windows也是可以)</p>
+<a id="more"></a>
+
+<h3 id="Github-repo設定-amp-Hexo搭建"><a href="#Github-repo設定-amp-Hexo搭建" class="headerlink" title="Github repo設定 &amp; Hexo搭建"></a>Github repo設定 &amp; Hexo搭建</h3><p>設置 github page 方式，以 <code>&lt;user_name&gt;.github.io</code> 為專案名稱，利用 branch 建構，這樣生成的網址將會是 <code>https://&lt;user_name&gt;.github.io/&lt;repo_name&gt;</code> </p>
+<h3 id="Step-1-建立repository"><a href="#Step-1-建立repository" class="headerlink" title="Step 1: 建立repository"></a>Step 1: 建立repository</h3><p>在個人的 github 頁面上新增一個 repository (此處我就使用 blog 作為專案名稱)，不需建立 README.md</p>
+
+    <img src="/YuchBlog/posts/86f390b1/step1_git.png" class="" title="step1_git">
+
+
+
+<h3 id="Step-2-安裝套件-node-js-npm-nvm"><a href="#Step-2-安裝套件-node-js-npm-nvm" class="headerlink" title="Step 2: 安裝套件(node.js/npm/nvm)"></a>Step 2: 安裝套件(node.js/npm/nvm)</h3><p>還有很多重要的事情，中間可能會遇到一些問題，接下來的部分我就簡單介紹一下，上網找一下應該都會有很多解決方式。</p>
+<p>Hexo 是一個用 Node.js 所寫成的部落格框架，因此在安裝前必須先確定我們是否有 Node.js 套件管理工具 npm ( 本文使用 )</p>
+<p>我們可以從 <a href="https://nodejs.org/en/?source=post_page-----317beefdf182----------------------" target="_blank" rel="noopener">Node.js官網</a> 下載安裝，安裝完後至終端機輸入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<p>輸出版本後便表示安裝已完成</p>
+<h3 id="Step-3-安裝HEXO"><a href="#Step-3-安裝HEXO" class="headerlink" title="Step 3: 安裝HEXO"></a>Step 3: 安裝HEXO</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 安裝 hexo</span></span><br><span class="line"></span><br><span class="line">$ hexo init &lt;repo_name&gt;</span><br><span class="line"><span class="comment"># 初始化安裝 hexo 的資料夾</span></span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/&lt;user_name&gt;/&lt;repo_name&gt;.git</span><br><span class="line"><span class="comment"># 將安裝 hexo 資料夾內的檔案全部複製到這裡</span></span><br></pre></td></tr></table></figure>
+<p>這樣我們就可以從這邊修改部落格內容，並且推上 github 專案中。</p>
+<p>像我這裡就遇到 <code>command not found: hexo bash</code> 的情形，這裡有個方法提供參考:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下載nvm套件</span></span><br><span class="line">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># This loads nvm</span></span><br><span class="line">$ <span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$([ -z "$&#123;XDG_CONFIG_HOME-&#125;" ] &amp;&amp; printf %s "$&#123;HOME&#125;/.nvm" || printf %s "$&#123;XDG_CONFIG_HOME&#125;/nvm")</span>"</span></span><br><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span></span><br></pre></td></tr></table></figure>
+
+<p>載完nvm，還有一個路徑問題(for mac)，首先 <code>open ~/.zshrc</code> ，然後在.zshrc檔案新增hexo路徑:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#path to HEXO</span></span><br><span class="line"><span class="built_in">export</span> PATH=~/.npm-global/lib/node_modules/hexo-cli/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<p>完成後再重新安裝Hexo即可。</p>
+<p>這裡有幾個常用指令要記住，之後再進行部落格修改的時候會很常使用到 :</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line"><span class="comment"># 清除舊 publish設定</span></span><br><span class="line"></span><br><span class="line">$ hexo g</span><br><span class="line"><span class="comment"># 建立新 publish</span></span><br><span class="line"></span><br><span class="line">$ hexo deploy</span><br><span class="line"><span class="comment"># deploy 到伺服器</span></span><br><span class="line"></span><br><span class="line">$ hexo server</span><br><span class="line"><span class="comment"># 在本地瀏覽網站內容 (預設 http://localhost:4000)</span></span><br><span class="line"></span><br><span class="line">$ hexo server -p 5000</span><br><span class="line"><span class="comment"># 如果port:4000被佔用，可以用這個</span></span><br></pre></td></tr></table></figure>
+
+<p>備註：<br>在 github 下的 branch 我設定成 master/hexofile<br>在 hexofile 進行操作，利用 git 指令載入到 <code>hexofile</code> 上；如果是利用hexo指令則會自動部署到 <code>master</code> 裡（因為_config.yml裡的branch設定成master)</p>
+<p>hexo指令進行部署厚的檔案是經過轉換的，並非原始檔，所以使用 branch 維護是比姣好的。</p>
+<p>主要是為了不讓原始檔只保留在本機，如果電腦壞了或者換電腦，你還可以從github找到。</p>
+<h3 id="STEP4-安裝Theme-Next"><a href="#STEP4-安裝Theme-Next" class="headerlink" title="STEP4 : 安裝Theme(Next)"></a>STEP4 : 安裝Theme(Next)</h3><p>主題可改可不改，看個人喜好囉。<br>因為主題的版本不同，有些檔案以及程式碼都不太一樣(但大同小異)，每行程式註解都看過，大概就能知道他在幹嘛。</p>
+<p>version: 5.1.4</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;repo_name&gt;</span><br><span class="line"><span class="comment"># 切換到要部屬至 github 的資料夾路徑</span></span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br><span class="line"><span class="comment"># clone Next 主題專案到站點裡的themes資料夾中</span></span><br></pre></td></tr></table></figure>
+<p>接下來要到設定檔中將主題改為 next ( 預設是 landscape )</p>
+<p>主要的設定檔案有兩個 : </p>
+<ol>
+<li><code>\_config.yml</code></li>
+<li><code>\themes\next\_config.yml</code></li>
+</ol>
+<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><p>網站的基本資訊設置，比較要注意的地方是 language 的部分，之後要配合 Next 的語言統一做設定。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: <span class="comment">#網站/部落格名稱</span></span><br><span class="line">subtitle: <span class="comment">#網站/部落格副標題</span></span><br><span class="line">description: <span class="comment">#網站/部落格基本描述 </span></span><br><span class="line">keywords:</span><br><span class="line">author: <span class="comment">#作者</span></span><br><span class="line">language: <span class="comment">#語言 zh-tw</span></span><br><span class="line">timezone: <span class="comment">#時區 Asia/Taipei</span></span><br></pre></td></tr></table></figure>
+
+<p>設定文章網址型態，這裡主要是讓某些地方會需要顯示文章網址 (例如版權宣告區塊)的部分可以正確顯示。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line">url: https://&lt;user_name&gt;.github.io/&lt;repo_name&gt;</span><br><span class="line">root: /&lt;repo_name&gt;/</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+
+<p>將主題改為 next</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<p>最後這裡最重要，之後我們要利用 hexo 指令進行部屬，就會調用這部份來進行部屬，如果這部分沒有正確便無法部屬上去。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/&lt;user_name&gt;/&lt;repo_name&gt;.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>如果不是利用 master 來進行網站設置，那麼 branch 的部分就要改成你的 <branch_name>。</p>
+<h4 id="themes-next-config-yml"><a href="#themes-next-config-yml" class="headerlink" title="\themes\next_config.yml"></a>\themes\next_config.yml</h4><p>Next 一共有四種版型可以選擇，大家可以自行選擇版型，將不要用的版型用 # 註釋掉即可。( 我自己使用的是 Gemini 版型 )</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
+<h3 id="Step-5-動態背景"><a href="#Step-5-動態背景" class="headerlink" title="Step 5: 動態背景"></a>Step 5: 動態背景</h3><p>可以在 <code>\⁨themes⁩\⁨next⁩\⁨source⁩\lib⁩\canvas-nest⁩.js</code> 做修改</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">color: <span class="string">"255, 80, 219"</span> <span class="comment"># RGB values, use `,` to separate #線條顏色</span></span><br><span class="line">opacity: 1 <span class="comment"># The opacity of line: 0~1 #線條透明度</span></span><br><span class="line">zIndex: -1 <span class="comment"># z-index property of the background #位在哪一層</span></span><br><span class="line">count: 100 <span class="comment"># The number of lines #線條數量</span></span><br></pre></td></tr></table></figure>
+<h3 id="Step-6-調整及部署"><a href="#Step-6-調整及部署" class="headerlink" title="Step 6: 調整及部署"></a>Step 6: 調整及部署</h3><p>在每一個設定更動後，也有一個標準 SOP :</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g <span class="comment"># generator</span></span><br><span class="line">$ hexo s <span class="comment"># server</span></span><br></pre></td></tr></table></figure>
+
+<p>先在本機上看看是否有什麼問題，持續地進行微調，待最後設定都沒有問題後再進行部屬</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d <span class="comment"># deploy</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Step-7-文章發佈"><a href="#Step-7-文章發佈" class="headerlink" title="Step 7: 文章發佈"></a>Step 7: 文章發佈</h3><p>Hexo 支援 markdown 編輯。<br>基本上有在使用hackmd的人都並不陌生，有興趣可以去學習 <a href="https://github.com/othree/markdown-syntax-zhtw" target="_blank" rel="noopener">markdown語法</a></p>
+<p><code>&lt;!--more--&gt;</code>是用來縮短首頁每篇文章的長度，會顯示<code>閱讀全文</code></p>
+<p>接下來，我們要在網站中建立第一篇新文章，您可以直接從現有的範例文章「Hello World」改寫，也可以學習 new 指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>您可以在指令中指定文章的佈局（layout），預設為 <code>post</code> ，您可以透過修改 <code>_config.yml</code> 中的 <code>default_layout</code> 設定來指定預設佈局。</p>
+<h4 id="佈局（Layout）"><a href="#佈局（Layout）" class="headerlink" title="佈局（Layout）"></a>佈局（Layout）</h4><p>Hexo 有三種預設佈局：post、page 和 draft，它們分別對應不同的路徑，而您所自定的其他佈局和 post 相同，都儲存至 source/_posts 資料夾。</p>
+<table>
+<thead>
+<tr>
+<th>佈局</th>
+<th>路徑</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>post</td>
+<td>source/_posts</td>
+</tr>
+<tr>
+<td>page</td>
+<td>source</td>
+</tr>
+<tr>
+<td>draft</td>
+<td>source/_posts</td>
+</tr>
+</tbody></table>
+<h4 id="首頁摘要的部分"><a href="#首頁摘要的部分" class="headerlink" title="首頁摘要的部分"></a>首頁摘要的部分</h4><p>一般在首頁會希望每一篇文章只要呈現一小部分內容以及一張代表性圖片即可，藉由 “ 閱讀全文 “ 按鈕來閱讀每一篇文章完整內容，在 hexo 官方的建議作法是在文章中插入 <code>&lt;!-- more --&gt;</code> 便可以在首頁僅呈現此代碼之前的文章內容。</p>
+<p>至於閱讀全文的按鈕樣式，我們可以在 <code>\themes\next\source\css\_schemes\&lt;選擇的版型&gt;\index.styl</code> 最後加入以下內容來做調整</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//閱讀全文樣式設置</span><br><span class="line">.post-button &#123;</span><br><span class="line">    margin-top: 30px;</span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.post-button .btn &#123;</span><br><span class="line">    color: white;</span><br><span class="line">    font-size: 15px;</span><br><span class="line">    background: <span class="comment">#000d33;</span></span><br><span class="line">    border-radius: 16px;</span><br><span class="line">    line-height: 2;</span><br><span class="line">    margin: 0 4px 8px 4px;</span><br><span class="line">    padding: 0 20px;</span><br><span class="line">    border:none;</span><br><span class="line">    -webkit-box-shadow: 0px 5px 30px -3px rgba(0,0,0,0.75);</span><br><span class="line">    -moz-box-shadow: 0px 5px 30px -3px rgba(0,0,0,0.75);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.post-button .btn:hover &#123;</span><br><span class="line">    color: <span class="comment">#000d33;</span></span><br><span class="line">    background: <span class="comment">#ffffff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step-8-結論"><a href="#Step-8-結論" class="headerlink" title="Step 8: 結論"></a>Step 8: 結論</h3><p>現在網路上真的很多教學範例，但是實際操作起來，因為每個主題不同，甚至於主題的版本也不同，在查詢的時候也會遇到一些問題，一開始因為路徑問題以及套件版本問題花了很多時間在建立環境，大家遇到的問題我遇到了，沒遇到的問題我也遇到了，俗話說的好，“頭過身就過”，<del>老天幫你挖了一個坑，就是要你跳下去</del>，期許自己未來在這個地方能夠分享很多自己學習到的新知識與心得。</p>
+<p>另外還有一些配置，像是留言板、背景顏色、字體大小、分類標籤的設置我就不一一贅述，有時間會再把東西都補上來的。</p>
+<h3 id="Step-9-reference"><a href="#Step-9-reference" class="headerlink" title="Step 9: reference"></a>Step 9: reference</h3><ul>
+<li><a href="https://shizsun0609tw.github.io/2019/05/29/git-hexo-%E8%BC%95%E9%AC%86%E6%9E%B6%E7%B6%B2%E7%AB%99/" target="_blank" rel="noopener">https://shizsun0609tw.github.io/2019/05/29/git-hexo-輕鬆架網站/</a></li>
+<li><a href="https://allen108108.github.io/blog/" target="_blank" rel="noopener">https://allen108108.github.io/blog/</a></li>
+<li><a href="https://blog.csdn.net/lichenliang666/article/details/88218551" target="_blank" rel="noopener">https://blog.csdn.net/lichenliang666/article/details/88218551</a></li>
+<li><a href="https://ithelp.ithome.com.tw/articles/10208619" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10208619</a></li>
+<li><a href="https://sh2ocn.top/2019/05/31/Hexo-NexT%E4%B8%BB%E9%A2%98-%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E6%97%8B%E8%BD%AC%E5%A4%B4%E5%83%8F/" target="_blank" rel="noopener">https://sh2ocn.top/2019/05/31/Hexo-NexT主题-设置圆形旋转头像/</a></li>
+<li><a href="https://extremegtr.github.io/2017/09/27/Customize-NexT-Gemini-theme/" target="_blank" rel="noopener">https://extremegtr.github.io/2017/09/27/Customize-NexT-Gemini-theme/</a></li>
+<li><a href="https://jacksonleon.gitee.io/posts/1540132352.html" target="_blank" rel="noopener">https://jacksonleon.gitee.io/posts/1540132352.html</a></li>
+<li><a href="https://blog.csdn.net/Wonz5130/article/details/84666519" target="_blank" rel="noopener">https://blog.csdn.net/Wonz5130/article/details/84666519</a></li>
+<li><a href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" target="_blank" rel="noopener">https://linlif.github.io/2017/05/27/Hexo使用攻略-添加分类及标签/</a></li>
+<li><a href="http://muyunyun.cn/posts/f55182c5/#more" target="_blank" rel="noopener">文章連結唯一化</a></li>
+<li><a href="https://www.google.com/search?q=hexo&rlz=1C5CHFA_enTW848TW848&oq=hexo&aqs=chrome..69i57j69i59l3j69i60l4.2945j0j7&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener">…etc</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>website網頁設計</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
