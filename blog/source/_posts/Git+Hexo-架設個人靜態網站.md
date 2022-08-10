@@ -1,11 +1,12 @@
 ---
 title: Git+Hexo-架設個人靜態網站
+tags:
+  - web
+  - hexo
+categories:
+  - website網頁設計
+abbrlink: 86f390b1
 date: 2020-02-10 22:21:19
-tags: 
-- web
-- hexo
-categories: 
-- website網頁設計
 ---
 
 categories: `website網頁設計`
@@ -22,10 +23,11 @@ tags: `web` `hexo`
 <!--more-->
 
 ### Github repo設定 & Hexo搭建
-設置github page方式：
-以`<user_name>.github.io` 為專案名稱，利用 branch 建構，這樣生成的網址將會是`https://<user_name>.github.io/<repo_name>` 這樣出來的網頁網址就為: `https://<user_name>.github.io/<repo_name>/`
+
+設置 github page 方式，以 `<user_name>.github.io` 為專案名稱，利用 branch 建構，這樣生成的網址將會是 `https://<user_name>.github.io/<repo_name>` 
 
 ### Step 1: 建立repository
+
 在個人的 github 頁面上新增一個 repository (此處我就使用 blog 作為專案名稱)，不需建立 README.md
 
 
@@ -268,20 +270,20 @@ Hexo 有三種預設佈局：post、page 和 draft，它們分別對應不同的
 
 現在網路上真的很多教學範例，但是實際操作起來，因為每個主題不同，甚至於主題的版本也不同，在查詢的時候也會遇到一些問題，一開始因為路徑問題以及套件版本問題花了很多時間在建立環境，大家遇到的問題我遇到了，沒遇到的問題我也遇到了，俗話說的好，“頭過身就過”，~~老天幫你挖了一個坑，就是要你跳下去~~，期許自己未來在這個地方能夠分享很多自己學習到的新知識與心得。
 
-另外還有一些配置，像是留言板、背景顏色、字體大小、分類標籤的設置我就不一一贅述，有問題的話我會的我會盡量幫忙的。
+另外還有一些配置，像是留言板、背景顏色、字體大小、分類標籤的設置我就不一一贅述，有時間會再把東西都補上來的。
 
 ### Step 9: reference
-* https://shizsun0609tw.github.io/2019/05/29/git-hexo-%E8%BC%95%E9%AC%86%E6%9E%B6%E7%B6%B2%E7%AB%99/
+* [https://shizsun0609tw.github.io/2019/05/29/git-hexo-輕鬆架網站/](https://shizsun0609tw.github.io/2019/05/29/git-hexo-%E8%BC%95%E9%AC%86%E6%9E%B6%E7%B6%B2%E7%AB%99/)
 * https://allen108108.github.io/blog/
 * https://blog.csdn.net/lichenliang666/article/details/88218551
 * https://ithelp.ithome.com.tw/articles/10208619
-* https://sh2ocn.top/2019/05/31/Hexo-NexT%E4%B8%BB%E9%A2%98-%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E6%97%8B%E8%BD%AC%E5%A4%B4%E5%83%8F/
+* [https://sh2ocn.top/2019/05/31/Hexo-NexT主题-设置圆形旋转头像/](https://sh2ocn.top/2019/05/31/Hexo-NexT%E4%B8%BB%E9%A2%98-%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E6%97%8B%E8%BD%AC%E5%A4%B4%E5%83%8F/)
 * https://extremegtr.github.io/2017/09/27/Customize-NexT-Gemini-theme/
 * https://jacksonleon.gitee.io/posts/1540132352.html
 *  https://blog.csdn.net/Wonz5130/article/details/84666519
-*  https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/
+* [https://linlif.github.io/2017/05/27/Hexo使用攻略-添加分类及标签/](https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/)
+* [文章連結唯一化](http://muyunyun.cn/posts/f55182c5/#more)
 * [...etc](https://www.google.com/search?q=hexo&rlz=1C5CHFA_enTW848TW848&oq=hexo&aqs=chrome..69i57j69i59l3j69i60l4.2945j0j7&sourceid=chrome&ie=UTF-8)
-
 
 
 
